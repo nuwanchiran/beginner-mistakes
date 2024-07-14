@@ -1,12 +1,12 @@
-const numbers = [1, 2, 3, 4, 5];
+const arr = ['x', 'y', 'z', 'p', 'q'];
 
 type Props = {};
 
 const ComponentKey = (props: Props) => {
   return (
     <ul>
-      {numbers.map((n, i) => (
-        <li key={i}>{n}</li>
+      {arr.map((value, index) => (
+        <li key={value}>{value}</li>
       ))}
     </ul>
   );

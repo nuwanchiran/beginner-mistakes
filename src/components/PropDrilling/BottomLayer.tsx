@@ -1,9 +1,8 @@
-type Props = {
-  title: string;
-};
+import { useTitle } from './TitleProvider';
 
-const BottomLayer = (props: Props) => {
-  return <div>{props.title}</div>;
+const BottomLayer = () => {
+  const title = useTitle();
+  return <div>{title}</div>;
 };
 
 export default BottomLayer;

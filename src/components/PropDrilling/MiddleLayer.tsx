@@ -1,11 +1,7 @@
 import BottomLayer from './BottomLayer';
 
-type Props = {
-  title: string;
-};
-
-const MiddleLayer = (props: Props) => {
-  return <BottomLayer title={props.title} />;
+const MiddleLayer = () => {
+  return <BottomLayer />;
 };
 
 export default MiddleLayer;

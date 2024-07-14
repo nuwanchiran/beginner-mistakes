@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
+import useCounter from '../hooks/useCounter';
 
 type Props = {};
 
 const UpdateState = (props: Props) => {
-  const [count, setCount] = useState(0);
-
-  const handleIncrement = () => {
-    setCount((prev) => prev + 1);
-    setCount((prev) => prev + 1);
-  };
-
-  const handleDecrement = () => {
-    setCount(count - 1);
-  };
+  const { count, handleDecrement, handleIncrement } = useCounter();
 
   return (
     <div>

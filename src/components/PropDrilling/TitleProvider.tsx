@@ -6,14 +6,14 @@ type Props = {
   children: React.ReactNode;
 };
 
-const TitleContextProvider = ({ children }: Props) => {
+const TitleProvider = ({ children }: Props) => {
   return (
-    <TitleContext.Provider value="Hello world">
+    <TitleContext.Provider value="context title">
       {children}
     </TitleContext.Provider>
   );
 };
 
-export default TitleContextProvider;
+export default TitleProvider;
 
 export const useTitle = () => useContext(TitleContext);

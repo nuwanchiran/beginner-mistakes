@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import Modal from './Modal';
+import React, { Suspense, useState } from 'react';
+
+const DynamicModal = React.lazy(() => import('./Modal'));
 
 type Props = {};
 
@@ -9,11 +10,13 @@ const ParentModal = (props: Props) => {
   return (
     <>
       <button onClick={() => setIsOpen(true)}>Open Modal</button>
-      {isOpen && (
-        <Modal closeModal={() => setIsOpen(false)}>
-          <div>hello world</div>
-        </Modal>
-      )}
+      <Suspense fallback={'Loading'}>
+        {isOpen && (
+          <DynamicModal closeModal={() => setIsOpen(false)}>
+            <div>hello world</div>
+          </DynamicModal>
+        )}
+      </Suspense>
     </>
   );
 };
